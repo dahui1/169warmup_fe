@@ -53,7 +53,17 @@
 */
 
 - (IBAction)returnToFirstPage:(id)sender {
-    [self  dismissViewControllerAnimated:YES  completion:^{}];
+    //[self dismissViewControllerAnimated:YES  completion:^{}];
+    [self performSegueWithIdentifier:@"logout" sender:self];
+    
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"logout"]) {
+        ViewController *destination = segue.destinationViewController;
+        destination.textUser.text = nil;
+        destination.textPwd.text = nil;
+    }
 }
 
 @end

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AFHTTPRequestOperationManager.h"
 #import "HomeViewController.h"
+#import "KeychainItemWrapper.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textUser;
 @property (weak, nonatomic) IBOutlet UITextField *textPwd;
 @property (weak, nonatomic) IBOutlet UILabel *labelLogin;

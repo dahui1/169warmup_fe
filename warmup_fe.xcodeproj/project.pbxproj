@@ -22,6 +22,8 @@
 		FE2D1E5419DD3BD700433302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2D1E3619DD3BD700433302 /* UIKit.framework */; };
 		FE2D1E5C19DD3BD700433302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE2D1E5A19DD3BD700433302 /* InfoPlist.strings */; };
 		FE2D1E5E19DD3BD700433302 /* warmup_feTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2D1E5D19DD3BD700433302 /* warmup_feTests.m */; };
+		FE2EC13919DE931F009B6F82 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE2EC13819DE931F009B6F82 /* icon.jpg */; };
+		FE2FC9CA19DE818F00AB9CCB /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2FC9C919DE818F00AB9CCB /* KeychainItemWrapper.m */; };
 		FEE4901819DE0EC100D4084C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE4901719DE0EC100D4084C /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,9 @@
 		FE2D1E5919DD3BD700433302 /* warmup_feTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "warmup_feTests-Info.plist"; sourceTree = "<group>"; };
 		FE2D1E5B19DD3BD700433302 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FE2D1E5D19DD3BD700433302 /* warmup_feTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = warmup_feTests.m; sourceTree = "<group>"; };
+		FE2EC13819DE931F009B6F82 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		FE2FC9C819DE818F00AB9CCB /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		FE2FC9C919DE818F00AB9CCB /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		FEE4901619DE0EC100D4084C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FEE4901719DE0EC100D4084C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +136,9 @@
 		FE2D1E3819DD3BD700433302 /* warmup_fe */ = {
 			isa = PBXGroup;
 			children = (
+				FE2EC13819DE931F009B6F82 /* icon.jpg */,
+				FE2FC9C819DE818F00AB9CCB /* KeychainItemWrapper.h */,
+				FE2FC9C919DE818F00AB9CCB /* KeychainItemWrapper.m */,
 				FE2D1E4119DD3BD700433302 /* AppDelegate.h */,
 				FE2D1E4219DD3BD700433302 /* AppDelegate.m */,
 				FE2D1E4419DD3BD700433302 /* Main.storyboard */,
@@ -251,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2EC13919DE931F009B6F82 /* icon.jpg in Resources */,
 				FE2D1E4B19DD3BD700433302 /* Images.xcassets in Resources */,
 				FE2D1E3D19DD3BD700433302 /* InfoPlist.strings in Resources */,
 				FE2D1E4619DD3BD700433302 /* Main.storyboard in Resources */,
@@ -308,6 +317,7 @@
 				FE2D1E4919DD3BD700433302 /* ViewController.m in Sources */,
 				FE2D1E4319DD3BD700433302 /* AppDelegate.m in Sources */,
 				FE2D1E3F19DD3BD700433302 /* main.m in Sources */,
+				FE2FC9CA19DE818F00AB9CCB /* KeychainItemWrapper.m in Sources */,
 				FEE4901819DE0EC100D4084C /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
