@@ -25,6 +25,7 @@
 		FE2EC13919DE931F009B6F82 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE2EC13819DE931F009B6F82 /* icon.jpg */; };
 		FE2FC9CA19DE818F00AB9CCB /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2FC9C919DE818F00AB9CCB /* KeychainItemWrapper.m */; };
 		FEE4901819DE0EC100D4084C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE4901719DE0EC100D4084C /* HomeViewController.m */; };
+		FEFE1D1219DF1A3000B4BF2E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFE1D1119DF1A3000B4BF2E /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		FE2FC9C919DE818F00AB9CCB /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		FEE4901619DE0EC100D4084C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FEE4901719DE0EC100D4084C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FEFE1D1119DF1A3000B4BF2E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		FE2D1E3819DD3BD700433302 /* warmup_fe */ = {
 			isa = PBXGroup;
 			children = (
+				FEFE1D1119DF1A3000B4BF2E /* background.png */,
 				FE2EC13819DE931F009B6F82 /* icon.jpg */,
 				FE2FC9C819DE818F00AB9CCB /* KeychainItemWrapper.h */,
 				FE2FC9C919DE818F00AB9CCB /* KeychainItemWrapper.m */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2EC13919DE931F009B6F82 /* icon.jpg in Resources */,
+				FEFE1D1219DF1A3000B4BF2E /* background.png in Resources */,
 				FE2D1E4B19DD3BD700433302 /* Images.xcassets in Resources */,
 				FE2D1E3D19DD3BD700433302 /* InfoPlist.strings in Resources */,
 				FE2D1E4619DD3BD700433302 /* Main.storyboard in Resources */,

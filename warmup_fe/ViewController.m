@@ -44,6 +44,10 @@
     NSString* user  = textUser.text;
     NSString* pwd   = textPwd.text;
     
+    // Client-side validations
+    if (user.length == 0 || user.length > 128 || pwd.length > 128)
+        return [self loginAlert: @"Invalid username and password combination. Please try again."];
+    
     AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
     [client POST:@"http://warmupyeyh.herokuapp.com/users/login"
       parameters:@{@"user": user, @"password": pwd}
@@ -63,12 +67,16 @@
                  count = (NSString *)[result objectForKey:@"count"];
                  [self performSegueWithIdentifier:@"login_success" sender:self];
                  NSLog(@"Login succeeded with username %@ and password %@", user, pwd);
-             } else if (error == -1){
+             }
+             
+             /* This part can be removed as it has been checked on client side
+              else if (error == -1){
                  // Bad combination
                  NSString *message = @"Invalid username and password combination. Please try again.";
                  [self loginAlert: message];
                  NSLog(@"Login Failed with username %@ and password %@", user, pwd);
              }
+              */
              NSLog(@"Server Response: \n%@", responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSString *message = @"Request failed. Please try again later.";
@@ -80,6 +88,13 @@
 - (IBAction)btnAdd:(id)sender {
     NSString* user  = textUser.text;
     NSString* pwd   = textPwd.text;
+    
+    // Client-side validations
+    if (user.length == 0 || user.length > 128)
+        return [self addUserAlert: @"The user name should be non-empty and at most 128 characters long. Please try again."];
+    
+    if (pwd.length > 128)
+        return [self addUserAlert: @"The password should be at most 128 characters long. Please try again."];
     
     AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
     [client POST:@"http://warmupyeyh.herokuapp.com/users/add"
@@ -101,7 +116,10 @@
                  NSString *message = @"This username already exists. Please try again.";
                  [self addUserAlert: message];
                  NSLog(@"Add user failed with username %@ and password %@: user existed", user, pwd);
-             } else if (error == -3) {
+             }
+             
+             /* This part can be removed as it has been checked on client side
+             else if (error == -3) {
                  // User name isn't valid
                  NSString *message = @"The user name should be non-empty and at most 128 characters long. Please try again.";
                  [self addUserAlert: message];
@@ -112,6 +130,7 @@
                  [self addUserAlert: message];
                  NSLog(@"Add user failed with username %@ and password %@: illegal password", user, pwd);
              }
+              */
              NSLog(@"Server Response: \n%@", responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSString *message = @"Request failed. Please try again later.";
