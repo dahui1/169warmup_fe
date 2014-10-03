@@ -21,5 +21,6 @@
 - (IBAction)btnAdd:(id)sender;
 - (BOOL) textFieldShouldReturn: (UITextField *) textField;
 - (IBAction)backgroundTap:(id)sender;
-
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+- (void)textFieldDidEndEditing:(UITextField *)textField;
 @end

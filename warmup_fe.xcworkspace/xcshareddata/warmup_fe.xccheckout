@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>457D80DF-5FFE-43C9-B021-53617EA90CED</string>
+	<key>IDESourceControlProjectName</key>
+	<string>warmup_fe</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E9B614D7-776B-42DF-AF1B-AEDACAD20844</key>
+		<string>https://github.com/dahui1/169warmup_fe.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>warmup_fe.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E9B614D7-776B-42DF-AF1B-AEDACAD20844</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dahui1/169warmup_fe.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E9B614D7-776B-42DF-AF1B-AEDACAD20844</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9B614D7-776B-42DF-AF1B-AEDACAD20844</string>
+			<key>IDESourceControlWCCName</key>
+			<string>warmup_fe</string>
+		</dict>
+	</array>
+</dict>
+</plist>

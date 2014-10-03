@@ -22,6 +22,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    textUser.delegate = self;
+    textPwd.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,22 +49,14 @@
               [self performSegueWithIdentifier:@"login_success" sender:self];
               NSLog(@"Login succeeded with username %@ and password %@", user, pwd);
           } else if (error == -1){
-              UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login Failed!"
-                                                                  message:@"Invalid username and password combination. Please try again."
-                                                                 delegate:self
-                                                        cancelButtonTitle:@"OK"
-                                                        otherButtonTitles:nil, nil];
-              [alertView show];
+              NSString *message = @"Invalid username and password combination. Please try again.";
+              [self loginAlert: message];
               NSLog(@"Login Failed with username %@ and password %@", user, pwd);
           }
           NSLog(@"Server Response: \n%@", responseObject);
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Request failed!"
-                                                              message:@"Request failed. Please try again later."
-                                                             delegate:self
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles:nil, nil];
-          [alertView show];
+          NSString *message = @"Request failed. Please try again later.";
+          [self loginAlert: message];
           NSLog(@"Request failed due to fatal error.");
       }];
 }
@@ -84,38 +78,22 @@
                  [self performSegueWithIdentifier:@"login_success" sender:self];
                  NSLog(@"Add user succeeded with username %@ and password %@", user, pwd);
              } else if (error == -2){
-                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add User Failed!"
-                                                                     message:@"This username already exists. Please try again."
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil, nil];
-                 [alertView show];
+                 NSString *message = @"This username already exists. Please try again.";
+                 [self addUserAlert: message];
                  NSLog(@"Add user failed with username %@ and password %@: user existed", user, pwd);
              } else if (error == -3) {
-                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add User Failed!"
-                                                                     message:@"The user name should be non-empty and at most 128 characters long. Please try again."
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil, nil];
-                 [alertView show];
+                 NSString *message = @"The user name should be non-empty and at most 128 characters long. Please try again.";
+                 [self addUserAlert: message];
                  NSLog(@"Add user failed with username %@ and password %@: illegal user name", user, pwd);
              } else {
-                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add User Failed!"
-                                                                     message:@"The password should be at most 128 characters long. Please try again."
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil, nil];
-                 [alertView show];
+                 NSString *message = @"The password should be at most 128 characters long. Please try again.";
+                 [self addUserAlert: message];
                  NSLog(@"Add user failed with username %@ and password %@: illegal password", user, pwd);
              }
              NSLog(@"Server Response: \n%@", responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Request failed!"
-                                                                 message:@"Request failed. Please try again later."
-                                                                delegate:self
-                                                       cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:nil, nil];
-             [alertView show];
+             NSString *message = @"Request failed. Please try again later.";
+             [self addUserAlert: message];
              NSLog(@"Request failed due to fatal error.");
          }];
 }
@@ -138,5 +116,45 @@
     }
 }
 
+// When editing and keyboard appears
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = textField.frame;
+    int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//the height of keyboard is 216
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    // move the view up
+    if(offset > 0)
+        self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
+    
+    [UIView commitAnimations];
+}
+
+// After editing
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
+
+- (void) addUserAlert: (NSString *) Message {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add User Failed"
+                                                        message:Message
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+- (void) loginAlert: (NSString *) Message {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                        message:Message
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+    [alertView show];
+}
 
 @end
